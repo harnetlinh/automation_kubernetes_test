@@ -25,7 +25,7 @@ apt-get update
 apt-get install -y kubelet kubeadm kubectl
 
 sleep 30 
-cp /home/ubuntu/10-kubeadm.conf /etc/systemd/system/kubelet.service.d/ 
+cp /home/ubuntu/automation_kubernetes_test/10-kubeadm.conf /etc/systemd/system/kubelet.service.d/ 
 sleep 10
 systemctl daemon-reload
 sleep 30

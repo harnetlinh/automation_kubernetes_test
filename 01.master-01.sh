@@ -24,7 +24,7 @@ EOF
 apt-get update
 apt-get install -y kubelet kubeadm kubectl
 sleep 30
-cp /home/ubuntu/automation_kubernetes/10-kubeadm.conf /etc/systemd/system/kubelet.service.d/ 
+cp /home/ubuntu/automation_kubernetes_test/10-kubeadm.conf /etc/systemd/system/kubelet.service.d/ 
 sleep 30
 systemctl daemon-reload
 sleep 30
@@ -33,7 +33,7 @@ rm /etc/containerd/config.toml
 systemctl restart containerd
 sleep 30
 kubeadm init --pod-network-cidr=10.244.0.0/16
-kubeadm token create --print-join-command > /home/ubuntu/automation_kubernetes/join.sh
+kubeadm token create --print-join-command > /home/ubuntu/automation_kubernetes_test/join.sh
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
